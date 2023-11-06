@@ -1,29 +1,31 @@
 import React from "react";
-
+import Logo from "../Utils/Logo.png";
+// import {Link} from "react-router-dom";
 const Header = () => {
   return (
-    <div className="flex h-[76px] shadow-xl items-center justify-evenly  w-[100%] bg-white m-0 fixed top-0">
-      <div className="flex justify-between">
+    <div className="flex h-[76px] shadow-xl items-center justify-evenly top-0 -z-0  w-[100%] bg-white m-0 fixed">
+      <div className="flex justify-between w-[20%]">
         <div>
           <img
-            className="h-[32px] mz-2"
+            className="h-[32px] m-2"
             src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg"
             alt="hamburger-menu"
           />
         </div>
         <div>
-          <img
-            className=" h-[32px] mx-2"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Daraz_Logo.png/1024px-Daraz_Logo.png"
-            alt="logo"
-          />
+          <a href="/">
+            <img className=" h-[32px] mx-2" src={Logo} alt="logo" />
+          </a>
         </div>
       </div>
-      <div className="w-2/5 h-[42px] flex  items-center border-2 border-black justify-around rounded-lg">
-        <input type="text" className="w-5/6 h-auto border" />
-        <button>
+      <div className="w-2/5 h-[42px] flex  items-center border-2 justify-around rounded-lg">
+        <input
+          type="text"
+          className="w-5/6 h-auto border-2 px-2 border-black cursor-text"
+        />
+        <button className="border-2 border-black rounded-md ml-[3px] bg-orange-400">
           <img
-            className="w-[36px] h-[20px] bg-orange-400 rounded-md ml-[3px] "
+            className="w-[36px] h-[20px] rounded-md  "
             src="https://static.thenounproject.com/png/4009566-200.png"
             alt="Search"
           />

@@ -1,10 +1,10 @@
 import React from "react";
-import ProductCards from "./ProductCards";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
-    <div>
-      <ProductCards />
+    <div className="mt-24">
+      <Outlet />
     </div>
   );
 };
