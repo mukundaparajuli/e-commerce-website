@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { PRODUCT_API } from "../Utils/config";
+import React, { useEffect, useContext } from "react";
+// import { PRODUCT_API } from "../Utils/config";
 import ProductCard from "./ProductCard";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import NoteContext from "./Contexts/NoteContext";
 
 const ProductCards = () => {
-  const [products, setProducts] = useState(null);
+  const a = useContext(NoteContext);
   useEffect(() => {
-    getProductApi();
+    a.getProductApi();
   }, []);
-  async function getProductApi() {
-    const data = await fetch(PRODUCT_API);
-    const json = await data.json();
-    setProducts(json);
-  }
-  return products === null ? (
+  const products = a.products;
+
+  // Sample list of products
+
+  return products === 0 ? (
     <Shimmer />
   ) : (
     <div className="my-20 flex flex-wrap justify-evenly">

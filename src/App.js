@@ -1,16 +1,18 @@
-import React from "react";
-import Header from "../src/Components/Header";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import ProductCards from "../src/Components/ProductCards";
-import ProductDetail from "../src/Components/ProductDetail";
-import Error from "../src/Components/Error";
+import "./App.css";
+import "./index.css";
 import Body from "./Components/Body";
+import ProductCards from "./Components/ProductCards";
+import Cart from "./Components/Cart";
+import Header from "./Components/Header";
+import store from "./Utils/store";
+import { Provider } from "react-redux";
+import ProductDetail from "./Components/ProductDetail";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Body />,
-    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -20,15 +22,23 @@ const appRouter = createBrowserRouter([
         path: "/:productId",
         element: <ProductDetail />,
       },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
   },
 ]);
-const AppLayout = () => {
+
+function App() {
   return (
-    <div>
-      <Header />
-      <RouterProvider router={appRouter} />
+    <div className="h-[100vh]">
+      <Provider store={store}>
+        <Header />
+        <RouterProvider router={appRouter} />
+      </Provider>
     </div>
   );
-};
-export default AppLayout;
+}
+
+export default App;

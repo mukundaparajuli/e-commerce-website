@@ -8,8 +8,15 @@ const ProductCard = ({ info }) => {
         <img className="h-[180px] flex self-center" src={image} alt="" />
       </div>
       <h1 className="text-[18px] font-bold">{title}</h1>
-      <h1 className="text-[14px]">$ {price}</h1>
-      <h1>{rating.rate} stars</h1>
+      <h1 className="text-[16px] font-semibold">$ {price}</h1>
+      <div className="flex items-center">
+        <h1 className="text-[16px] mr-2  font-semibold">Rating: {rating.rate}</h1>
+        <img
+          className="h-[22px]"
+          src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"
+          alt=""
+        />
+      </div>
     </div>
   );
 };
