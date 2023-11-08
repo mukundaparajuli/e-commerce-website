@@ -1,4 +1,5 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./index.css";
 import Body from "./Components/Body";
@@ -9,33 +10,20 @@ import store from "./Utils/store";
 import { Provider } from "react-redux";
 import ProductDetail from "./Components/ProductDetail";
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Body />,
-    children: [
-      {
-        path: "/",
-        element: <ProductCards />,
-      },
-      {
-        path: "/:productId",
-        element: <ProductDetail />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-    ],
-  },
-]);
-
 function App() {
   return (
     <div className="h-[100vh]">
       <Provider store={store}>
-        <Header />
-        <RouterProvider router={appRouter} />
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Body />}>
+              <Route index element={<ProductCards />} />
+              <Route path=":productId" element={<ProductDetail />} />
+              <Route path="cart" element={<Cart />} />
+            </Route>
+          </Routes>
+        </Router>
       </Provider>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Logo from "../Utils/Logo.png";
 import { useSelector } from "react-redux";
 import NoteContext from "./Contexts/NoteContext";
+import { Link } from "react-router-dom";
 const Header = () => {
   const a = useContext(NoteContext);
   const [searchText, setSearchText] = useState("");
@@ -15,13 +16,13 @@ const Header = () => {
     <div className="flex h-[82px] shadow-xl items-center justify-evenly top-0 -z-0  w-[100%] bg-white m-0 fixed">
       <div className="flex justify-between w-[20%]">
         <div>
-          <a href="/">
+          <Link to="/">
             <img
               className="h-[32px] m-2"
               src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg"
               alt="hamburger-menu"
             />
-          </a>
+          </Link>
         </div>
         <div>
           <img className=" h-[32px] mx-2" src={Logo} alt="logo" />
@@ -55,7 +56,7 @@ const Header = () => {
         </button>
       </div>
 
-      <a href="/cart">
+      <Link to="/cart">
         <div className="flex items-center justify-evenly">
           <img
             className="h-[42px]"
@@ -66,7 +67,7 @@ const Header = () => {
             Cart: {cartItems.length}
           </h1>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

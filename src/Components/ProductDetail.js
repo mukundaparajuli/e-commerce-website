@@ -18,7 +18,7 @@ const ProductDetail = () => {
     console.log(json);
   };
   const addItems = () => {
-    dispatch(addItem());
+    dispatch(addItem(product));
   };
 
   console.log(productId);
@@ -66,7 +66,7 @@ const ProductDetail = () => {
                 </button>
                 <button
                   className="text-[22px] font-bold mx-2 rounded-md  bg-orange-400 p-2 text-white hover:shadow-orange-200 shadow-xl"
-                  onClick={() => addItems()}
+                  onClick={() => addItems(product)}
                 >
                   Add to Cart
                 </button>
