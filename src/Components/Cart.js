@@ -5,12 +5,12 @@ import NoItemsAdded from "./NoItemsAdded";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  return cartItems === 0 ? (
+  return cartItems.length === 0 ? (
     <NoItemsAdded />
   ) : (
     <div>
-      {cartItems.map((item) => (
-        <CartProduct props={item} />
+      {cartItems.map((item, index) => (
+        <CartProduct props={item} key={index} />
       ))}
     </div>
   );

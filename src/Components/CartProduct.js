@@ -1,7 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../Utils/CartSlice";
 
 const CartProduct = ({ props }) => {
-  const { title, image, description, price, rating } = props;
+  const { title, image, description, price, rating, id, index } = props;
+  const dispatch = useDispatch();
+  const removeItems = () => {
+    dispatch(removeItem(id));
+  };
   return (
     <div className="flex justify-center my-9">
       <div className="w-[90%] flex self-center border border-black h-auto rounded-lg justify-evenly">
@@ -27,8 +33,14 @@ const CartProduct = ({ props }) => {
         </div>
         <div className="flex justify-center items-center p-1 m-3 w-[20%]">
           <div className="w-[100%]  text-white font-semibold">
-            <button className="border border-black px-2 my-1 w-[98%] bg-red-500 rounded-md">
-              Remove
+            const index={index};
+            <button
+              className="border border-black px-2 my-1 w-[98%] bg-red-500 rounded-md"
+              onClick={() => {
+                removeItems();
+              }}
+            >
+              Remove Item
             </button>
             <button className="border border-black px-2 my-1 w-[98%] bg-green-500 rounded-md">
               Buy
