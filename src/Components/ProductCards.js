@@ -14,9 +14,7 @@ const ProductCards = () => {
 
   // Sample list of products
 
-  return products === 0 ? (
-    <Shimmer />
-  ) : (
+  return products ? (
     <div className="my-20 flex flex-wrap justify-evenly">
       {products.map((product, id) => (
         <Link to={"/" + product.id} key={id}>
@@ -24,6 +22,8 @@ const ProductCards = () => {
         </Link>
       ))}
     </div>
+  ) : (
+    <Shimmer />
   );
 };
 

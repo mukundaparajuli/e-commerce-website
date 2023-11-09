@@ -25,9 +25,13 @@ const ProductDetail = () => {
   return (
     <div>
       {product ? (
-        <div className="flex justify-around items-center">
-          <div className="w-[40%] my-4 mx-4">
-            <img className="h-[500px] my-3" src={product.image} alt="" />
+        <div className="flex justify- items-center  bg-white">
+          <div className="w-[40%] my-4 mx-4" >
+            <img
+              className="h-[500px] my-3 flex  self-center"
+              src={product.image}
+              alt=""
+            />
             <h1 className="text-[24px] font-bold my-3">{product.title}</h1>
           </div>
           <div className="w-[45%] mx-4">
@@ -61,11 +65,11 @@ const ProductDetail = () => {
                 </h1>
               </div>
               <div className="my-12 flex">
-                <button className="text-[22px] font-bold mx-2 rounded-md border-black border-2  p-2 hover:shadow-xl">
+                <button className="text-[22px] font-bold mx-2 rounded-md bg-green-400 border-black border-2  p-2 hover:shadow-green-200 shadow-xl">
                   Buy Now
                 </button>
                 <button
-                  className="text-[22px] font-bold mx-2 rounded-md  bg-orange-400 p-2 text-white hover:shadow-orange-200 shadow-xl"
+                  className="text-[22px] font-bold mx-2 rounded-md  border-black border-2  bg-orange-400 p-2 text-black hover:shadow-orange-200 shadow-xl"
                   onClick={() => addItems(product)}
                 >
                   Add to Cart

@@ -17,7 +17,6 @@ export const Shimmer = () => {
             <div className="rounded-2xl p-1 bg-gray-300 h-[17px] w-76 my-3 flex justify-center"></div>
             <div className="rounded-2xl p-1 bg-gray-300 h-[17px] w-76 my-3 flex justify-center"></div>
             <div className="rounded-2xl p-1 bg-gray-300 h-[17px] w-76 my-3 flex justify-center"></div>
-            
           </div>
         ))}
     </div>

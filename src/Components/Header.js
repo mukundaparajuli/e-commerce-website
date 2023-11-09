@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex h-[82px] shadow-xl items-center justify-evenly top-0 -z-0  w-[100%] bg-white m-0 fixed">
+    <div className="flex h-[82px] shadow-xl items-center justify-evenly top-0 bg-white  w-[100%] 00 m-0 fixed">
       <div className="flex justify-between w-[20%]">
         <div>
           <Link to="/">
@@ -33,7 +33,10 @@ const Header = () => {
           type="text"
           className="w-5/6 h-auto border-2 px-2 border-black cursor-text"
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            HandleSearch();
+          }}
         />
         <button className="border-2 border-black rounded-md ml-[3px] bg-orange-400">
           <img
